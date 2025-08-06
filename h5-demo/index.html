@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 100px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        function setRemUnit() {
+            const designWidth = 1920;
+            const rootFontSize = 100;
+            const clientWidth = window.innerWidth > designWidth ? designWidth : window.innerWidth;
+            const rem = (clientWidth / designWidth) * rootFontSize;
+            document.documentElement.style.fontSize = rem + 'px';
+        }
+        setRemUnit();
+        window.addEventListener('resize', setRemUnit);
+    </script>
+</head>
+<body>
+    <div style="width: 19.18rem; height: 8.94rem; background-color: #f0f0f0;border: 1px solid red;"></div>
+</body>
+</html>
